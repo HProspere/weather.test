@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Geologica Roman";
+  font-weight: 400;
+  src: local("Geologica Roman"), url("/fonts/Geologica-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Geologica Roman";
+  font-weight: 500;
+  src: local("Geologica Roman"), url("/fonts/Geologica-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Geologica Roman";
+  font-weight: 600;
+  src: local("Geologica Roman"), url("/fonts/Geologica-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Geologica Roman";
+  font-weight: 700;
+  src: local("Geologica Roman"), url("/fonts/Geologica-Bold.ttf") format("truetype");
+}
+
+$font-family-base: "Geologica Roman", sans-serif;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+@mixin base-font {
+  font-family: $font-family-base;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -1%;
+}
+
+@mixin font-p1-reg {
+  @include base-font;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@mixin font-p1-med {
+  @include base-font;
+  font-size: 30px;
+}
+
+@mixin font-p2-med {
+  @include base-font;
+  font-size: 26px;
+}
+
+@mixin font-p3-med {
+  @include base-font;
+  font-size: 24px;
+}
+
+@mixin font-p4-med {
+  @include base-font;
+  font-size: 22px;
+}
+
+@mixin font-h1 {
+  @include base-font;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+@mixin font-h3 {
+  @include base-font;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+@mixin font-h4 {
+  @include base-font;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 130%;
+}

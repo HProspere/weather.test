@@ -6,6 +6,6 @@
   Current weather forecast daily
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

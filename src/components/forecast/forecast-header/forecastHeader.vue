@@ -6,6 +6,6 @@
   Forecast header component
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

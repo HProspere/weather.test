@@ -1,0 +1,6 @@
+@use "colors";
+@use "typo";
+
+* {
+  @include typo.base-font;
+}

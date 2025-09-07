@@ -5,13 +5,9 @@ import PopularCities from "@/components/popular-cities/popularCities.vue";
 </script>
 
 <template>
-  <header>
-    <main-header/>
-  </header>
+  <main-header />
 
-  <main>
-    <RouterView />
-  </main>
+  <RouterView />
 
   <popular-cities />
 </template>

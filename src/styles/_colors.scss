@@ -1,0 +1,22 @@
+$white-40: #ffffff66;
+$white-20: #ffffff14;
+
+$base-white-100: #e9e9f3;
+$base-white-60: #e9e9f399;
+$base-white-20: #e9e9f333;
+$base-white-10: #e9e9f31A;
+
+$font-base-color: white;
+$font-dimmed-color: $white-40;
+$font-sub-caption: $base-white-60;
+
+$ui-icons-color: $base-white-100;
+
+$deep-blue: #052652;
+$medium-blue: #1a669c;
+$light-blue: #2d9cdb;
+$white-blue: #eeeded;
+$white-blue-10: #eeeded0a;
+
+$main-gradient: linear-gradient(116.21deg, $deep-blue -3.25%, $light-blue 107.37%);
+$plate-gradient: radial-gradient(134.39% 134.39% at -17.89% -22.86%, $white-20 0%, $white-blue-10 100%)

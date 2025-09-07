@@ -6,6 +6,6 @@
   Current weather detailed plate
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

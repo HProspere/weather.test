@@ -14,6 +14,17 @@ export default defineConfig({
     vueDevTools(),
     svgLoader({defaultImport: 'component',}),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "@/styles/colors.scss";
+          @use "@/styles/typo.scss";
+          @use "@/styles/main.scss";
+        `
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

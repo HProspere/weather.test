@@ -6,6 +6,6 @@
   Popular cities are here
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
