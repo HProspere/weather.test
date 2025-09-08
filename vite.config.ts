@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
-    svgLoader({defaultImport: 'component',}),
+    svgLoader({ defaultImport: 'component' }),
   ],
   css: {
     preprocessorOptions: {

@@ -11,6 +11,6 @@ export interface ForecastRecord {
 export interface CityRecord {
   id: string;
   name: string;
-  daily?: ForecastRecord[];
-  weekly?: ForecastRecord[];
+  daily: ForecastRecord[];
+  weekly: ForecastRecord[];
 }

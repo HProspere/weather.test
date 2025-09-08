@@ -10,30 +10,44 @@ export const useForecastStore = defineStore(
       {
         id: '01',
         name: 'Казань',
+        daily: dailyForecast(new Date()),
+        weekly: weeklyForecast(new Date()),
       },
       {
         id: '02',
         name: 'Краснодар',
+        daily: dailyForecast(new Date()),
+        weekly: weeklyForecast(new Date()),
       },
       {
         id: '03',
         name: 'Уфа',
+        daily: dailyForecast(new Date()),
+        weekly: weeklyForecast(new Date()),
       },
       {
         id: '04',
         name: 'Новосибирск',
+        daily: dailyForecast(new Date()),
+        weekly: weeklyForecast(new Date()),
       },
       {
         id: '05',
         name: 'Красноярск',
+        daily: dailyForecast(new Date()),
+        weekly: weeklyForecast(new Date()),
       },
       {
         id: '06',
         name: 'Москва',
+        daily: dailyForecast(new Date()),
+        weekly: weeklyForecast(new Date()),
       },
       {
         id: '07',
         name: 'Тула',
+        daily: dailyForecast(new Date()),
+        weekly: weeklyForecast(new Date()),
       },
     ]);
     const selectedCity = ref<CityRecord>({
@@ -63,7 +77,7 @@ export const useForecastStore = defineStore(
         temp: Math.round(Math.random() * 60) - 30,
         wind: Math.round(Math.random() * 25),
         humidity: Math.round(Math.random() * 100),
-        weather: weatherList[Math.round(Math.random() * weatherList.length)],
+        weather: weatherList[Math.ceil(Math.random() * weatherList.length) - 1],
       };
     }
 
