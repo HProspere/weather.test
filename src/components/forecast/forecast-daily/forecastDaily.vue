@@ -26,6 +26,11 @@ const { selectedCity } = storeToRefs(useForecastStore());
   display: flex;
   justify-content: space-between;
 
+  @media only screen and (max-width: 1399px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .daily-cast {
     display: flex;
     flex-direction: column;

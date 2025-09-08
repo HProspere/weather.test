@@ -87,14 +87,6 @@ const activeRoute = computed(() => `/${router.currentRoute.value.fullPath.split(
     background-color: colors.$base-white-10;
     border-radius: 8px;
 
-    &::after {
-      content: "▼";
-      font-size: 1rem;
-      top: 6px;
-      right: 10px;
-      position: absolute;
-    }
-
     select {
       @include typo.font-p4-med;
       appearance: none;
