@@ -18,9 +18,10 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @use "@/styles/colors.scss";
-          @use "@/styles/typo.scss";
-          @use "@/styles/main.scss";
+          @use "@/styles/colors";
+          @use "@/styles/typo";
+          @use "@/styles/sizes";
+          @use "@/styles/main";
         `
       }
     }

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-
-import PopularCitiesHeader from "@/components/popular-cities/popular-cities-header/popularCitiesHeader.vue";
-import PopularCitiesForecast from "@/components/popular-cities/popular-cities-forecast/popularCitiesForecast.vue";
+import PopularCitiesHeader from '@/components/popular-cities/popular-cities-header/popularCitiesHeader.vue';
+import PopularCitiesForecast from '@/components/popular-cities/popular-cities-forecast/popularCitiesForecast.vue';
 </script>
 
 <template>

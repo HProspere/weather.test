@@ -1,5 +1,6 @@
 @use "colors";
 @use "typo";
+@use "sizes";
 
 * {
   @include typo.base-font;

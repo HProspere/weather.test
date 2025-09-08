@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import PopularCityPlate from "@/components/popular-cities/popullar-city-plate/popularCityPlate.vue";
-import { useForecastStore } from "@/stores/forecast.ts";
-import { storeToRefs } from "pinia";
+import PopularCityPlate from '@/components/popular-cities/popullar-city-plate/popularCityPlate.vue';
+import { useForecastStore } from '@/stores/forecast.ts';
+import { storeToRefs } from 'pinia';
 
 const { popularCities } = storeToRefs(useForecastStore());
 </script>

@@ -1,0 +1,30 @@
+$laptop-media-size: 1440px;
+$tablet-media-size: 768px;
+$phone-media-size: 480px;
+
+// $size-2xs: $numeral-1;
+// $size-xs: $numeral-2;
+// $size-s: $numeral-4;
+// $size-m: $numeral-8;
+// $size-l: $numeral-14;
+// $size-xl: $numeral-16;
+// $size-2xl: $numeral-28;
+
+
+@media only screen and (max-width: $laptop-media-size - 1) {
+  $base-size: 2px;
+  $base-border: 4px;
+  $back-color: gold;
+}
+
+@media only screen and (max-width: $tablet-media-size - 1) {
+  $base-size: 2px;
+  $base-border: 4px;
+  $back-color: gold;
+}
+
+@media only screen and (max-width: $phone-media-size - 1) {
+  $base-size: 1px;
+  $base-border: 2px;
+  $back-color: lightgray;
+}

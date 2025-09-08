@@ -6,7 +6,7 @@ import { useForecastStore } from '@/stores/forecast.ts';
 
 const router = useRouter();
 const forecastStore = useForecastStore();
-const { citiesList, selectedCity, popularCities } = storeToRefs(forecastStore);
+const { citiesList, selectedCity } = storeToRefs(forecastStore);
 
 const routerTabs = router.getRoutes()
   .filter((path) => !!path.meta.isRoot)
@@ -28,20 +28,21 @@ const activeRoute = computed(() => `/${router.currentRoute.value.fullPath.split(
       </div>
     </div>
 
-    <select
-      name="cities"
-      id="cities-selector"
-      style="color: gray"
-      v-model="selectedCity"
-    >
-      <option
-        v-for="city in citiesList"
-        :value="city"
-        style="color: blue"
+    <div class="city-selector">
+      <select
+        name="cities"
+        id="cities-selector"
+        v-model="selectedCity"
       >
-        {{ city.name }}
-      </option>
-    </select>
+        <option
+          v-for="city in citiesList"
+          :value="city"
+          class="city-option"
+        >
+          {{ city.name }}
+        </option>
+      </select>
+    </div>
   </div>
 </template>
 
@@ -78,6 +79,34 @@ const activeRoute = computed(() => `/${router.currentRoute.value.fullPath.split(
 
       &:hover {
         background: colors.$base-white-20;
+      }
+    }
+  }
+
+  .city-selector {
+    background-color: colors.$base-white-10;
+    border-radius: 8px;
+
+    &::after {
+      content: "▼";
+      font-size: 1rem;
+      top: 6px;
+      right: 10px;
+      position: absolute;
+    }
+
+    select {
+      @include typo.font-p4-med;
+      appearance: none;
+      background-color: #fff0;
+      padding: 10px 46px 10px 16px;
+    }
+
+    .city-option {
+      background-color: colors.$medium-blue;
+
+      &:hover {
+        background-color: colors.$light-blue;
       }
     }
   }
