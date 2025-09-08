@@ -3,4 +3,9 @@
 
 * {
   @include typo.base-font;
+  color: colors.$font-base-color;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
