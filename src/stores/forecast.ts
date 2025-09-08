@@ -39,6 +39,8 @@ export const useForecastStore = defineStore(
     const selectedCity = ref<CityRecord>({
       id: '01',
       name: 'Казань',
+      daily: dailyForecast(new Date()),
+      weekly: weeklyForecast(new Date()),
     });
     const popularCities = ref<CityRecord[]>([]);
 
@@ -54,14 +56,6 @@ export const useForecastStore = defineStore(
         tempCitiesList.splice(tempCitiesList.findIndex(el => el.id === city.id), 1);
       }
     }
-
-    watch(() => selectedCity.value.id,
-      () => {
-        selectedCity.value.daily = dailyForecast(new Date());
-        selectedCity.value.weekly = weeklyForecast(new Date());
-        fillPopularCities();
-      }
-    );
 
     function singleForecast(timestamp: Date):ForecastRecord {
       return {
@@ -86,6 +80,14 @@ export const useForecastStore = defineStore(
         .map((el, idx) => new Date(el.setHours(12) + (86400000 * idx)))
         .map((el) => singleForecast(el));
     }
+
+    watch(() => selectedCity.value.id,
+      () => {
+        selectedCity.value.daily = dailyForecast(new Date());
+        selectedCity.value.weekly = weeklyForecast(new Date());
+        fillPopularCities();
+      }
+    );
 
     return {
       citiesList,
