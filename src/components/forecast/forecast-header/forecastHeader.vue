@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useForecastStore } from '@/stores/forecast.ts';
 import { storeToRefs } from 'pinia';
-import { computed } from "vue";
+import { computed } from 'vue';
 
 const forecastStore = useForecastStore();
 const { selectedCity } = storeToRefs(forecastStore);
@@ -12,7 +12,7 @@ const dateText = computed(() => new Intl.DateTimeFormat(
     weekday: 'long',
     day: 'numeric',
     month: 'long',
-  }).format(selectedCity.value.daily?.[0].timestamp)
+  }).format(selectedCity.value.daily[0].timestamp)
 )
 </script>
 
@@ -28,6 +28,7 @@ const dateText = computed(() => new Intl.DateTimeFormat(
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: 56px 0 48px 0;
 
   .city-name {
     @include typo.font-h4;

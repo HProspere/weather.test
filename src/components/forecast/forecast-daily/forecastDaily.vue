@@ -1,17 +1,34 @@
 <script setup lang="ts">
 import ForecastHeader from '@/components/forecast/forecast-header/forecastHeader.vue';
 import ForecastDailyCurrent from '@/components/forecast/forecast-daily/forecast-daily-current/forecastDailyCurrent.vue';
+import ForecastDailyPlate from "@/components/forecast/forecast-daily/forecast-daily-plate/forecastDailyPlate.vue";
+import { storeToRefs } from 'pinia';
+import { useForecastStore } from '@/stores/forecast.ts';
+
+const { selectedCity } = storeToRefs(useForecastStore());
 </script>
 
 <template>
   <forecast-header />
-  <forecast-daily-current />
+  <div class="daily-panel">
+    <forecast-daily-current />
+    <div class="daily-cast">
+      <forecast-daily-plate
+        v-for="dayCast in selectedCity.daily"
+        :forecast="dayCast"
+      />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-  .forecast-daily {
-    width: 100%;
-    border: 1px solid red;
-    padding: 12px;
+.daily-panel {
+  display: flex;
+  justify-content: space-between;
+
+  .daily-cast {
+    display: flex;
+    flex-direction: column;
   }
+}
 </style>
