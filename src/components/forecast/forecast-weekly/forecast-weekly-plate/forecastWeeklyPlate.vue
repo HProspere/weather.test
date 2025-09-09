@@ -55,6 +55,12 @@ watch(
   align-items: center;
   gap: 8px;
 
+  @media only screen and (max-width: 779px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    width: 100%;
+  }
+
   .week-day {
     @include typo.font-p1-reg;
   }

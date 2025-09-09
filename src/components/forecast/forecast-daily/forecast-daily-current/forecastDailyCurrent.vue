@@ -63,15 +63,28 @@ watch(
   justify-content: space-between;
   height: 180px;
 
+  @media only screen and (max-width: 779px) {
+    width: 100%;
+    gap: 16px;
+  }
+
   .icon {
     height: 125px;
     width: 180px;
     display: flex;
     justify-content: center;
+
+    @media only screen and (max-width: 779px) {
+      height: 80px;
+      width: 120px;
+    }
   }
 
   .temp {
     @include typo.font-h1;
+    @media only screen and (max-width: 779px) {
+      font-size: 80px;
+    }
   }
 
   .details {
@@ -81,6 +94,10 @@ watch(
 
     .record {
       @include typo.font-p3-med;
+
+      @media only screen and (max-width: 779px) {
+        font-size: 18px;
+      }
     }
   }
 }

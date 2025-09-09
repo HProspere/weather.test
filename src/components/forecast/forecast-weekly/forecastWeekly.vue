@@ -23,5 +23,12 @@ const { selectedCity } = storeToRefs(useForecastStore());
   display: flex;
   gap: 20px;
   justify-content: flex-start;
+  height: 78px;
+
+  @media only screen and (max-width: 779px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
 }
 </style>

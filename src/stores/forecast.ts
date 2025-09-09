@@ -50,17 +50,13 @@ export const useForecastStore = defineStore(
         weekly: weeklyForecast(new Date()),
       },
     ]);
-    const selectedCity = ref<CityRecord>({
-      id: '01',
-      name: 'Казань',
-      daily: dailyForecast(new Date()),
-      weekly: weeklyForecast(new Date()),
-    });
+    const cityId = ref<string>('01');
+    const selectedCity = ref<CityRecord>();
     const popularCities = ref<CityRecord[]>([]);
 
     function fillPopularCities() {
       popularCities.value = [];
-      let tempCitiesList = citiesList.value.filter(el => el.id !== selectedCity.value.id);
+      let tempCitiesList = citiesList.value.filter(el => el.id !== selectedCity.value?.id);
 
       for (let i = 0; i < 5; i++) {
         const city = tempCitiesList[Math.floor(Math.random() * tempCitiesList.length)];
@@ -95,15 +91,22 @@ export const useForecastStore = defineStore(
         .map((el) => singleForecast(el));
     }
 
-    watch(() => selectedCity.value.id,
+    watch(cityId,
       () => {
-        selectedCity.value.daily = dailyForecast(new Date());
-        selectedCity.value.weekly = weeklyForecast(new Date());
+        selectedCity.value = {
+          ...(citiesList.value.find(el => el.id === cityId.value) || citiesList.value[0]),
+          daily: dailyForecast(new Date()),
+          weekly: weeklyForecast(new Date()),
+        };
         fillPopularCities();
+      },
+      {
+        immediate: true,
       }
     );
 
     return {
+      cityId,
       citiesList,
       selectedCity,
       popularCities,
@@ -113,7 +116,7 @@ export const useForecastStore = defineStore(
   },
   {
     persist: {
-      pick: ['selectedCity'],
+      pick: ['cityId'],
       storage: localStorage,
     },
   });

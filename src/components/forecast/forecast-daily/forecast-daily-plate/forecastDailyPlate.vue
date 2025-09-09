@@ -77,6 +77,11 @@ watch(
   justify-items: center;
   border-bottom: 1px solid colors.$base-white-10;
 
+  @media only screen and (max-width: 779px) {
+    width: 100%;
+    height: auto;
+  }
+
   .time-plate {
     display: flex;
     flex-direction: column;
@@ -86,20 +91,38 @@ watch(
 
     .time {
       @include typo.font-p1-reg;
+
+      @media only screen and (max-width: 779px) {
+        font-size: 14px;
+      }
     }
   }
 
   .temp {
     @include typo.font-h3;
+
+    @media only screen and (max-width: 779px) {
+      font-size: 40px;
+    }
   }
 
   .weather-icon {
     height: 44px;
+
+    @media only screen and (max-width: 779px) {
+      height: 36px;
+    }
   }
 
   .weather-label {
     @include typo.font-p1-reg;
     justify-self: start;
+  }
+
+  @media only screen and (max-width: 779px) {
+    .weather-label, .wind, .humidity {
+      font-size: 14px;
+    }
   }
 }
 </style>

@@ -55,11 +55,12 @@ watch(
 .city-plate {
   padding: 25px 26px;
   border-radius: 8px;
-  width: 242px;
+  min-width: 242px;
   height: 303px;
   background: colors.$base-white-20;
   border: 1px solid colors.$base-white-20;
   display: flex;
+  flex-shrink: 1;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;

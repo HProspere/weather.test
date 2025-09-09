@@ -6,7 +6,7 @@ import { useForecastStore } from '@/stores/forecast.ts';
 
 const router = useRouter();
 const forecastStore = useForecastStore();
-const { citiesList, selectedCity } = storeToRefs(forecastStore);
+const { citiesList, cityId } = storeToRefs(forecastStore);
 
 const routerTabs = router.getRoutes()
   .filter((path) => !!path.meta.isRoot)
@@ -32,11 +32,11 @@ const activeRoute = computed(() => `/${router.currentRoute.value.fullPath.split(
       <select
         name="cities"
         id="cities-selector"
-        v-model="selectedCity"
+        v-model="cityId"
       >
         <option
           v-for="city in citiesList"
-          :value="city"
+          :value="city.id"
           class="city-option"
         >
           {{ city.name }}
@@ -52,6 +52,11 @@ const activeRoute = computed(() => `/${router.currentRoute.value.fullPath.split(
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 779px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 
   .tabs {
     display: flex;
@@ -92,6 +97,10 @@ const activeRoute = computed(() => `/${router.currentRoute.value.fullPath.split(
       appearance: none;
       background-color: #fff0;
       padding: 10px 46px 10px 16px;
+
+      @media only screen and (max-width: 779px) {
+        width: 100%;
+      }
     }
 
     .city-option {

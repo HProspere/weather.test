@@ -20,5 +20,10 @@ const { popularCities } = storeToRefs(useForecastStore());
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 16px;
+
+  @media only screen and (max-width: 1439px) {
+    overflow-x: auto;
+  }
 }
 </style>

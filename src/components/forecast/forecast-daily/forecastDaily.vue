@@ -26,7 +26,7 @@ const { selectedCity } = storeToRefs(useForecastStore());
   display: flex;
   justify-content: space-between;
 
-  @media only screen and (max-width: 1399px) {
+  @media only screen and (max-width: 1439px) {
     flex-direction: column;
     justify-content: center;
   }
@@ -34,6 +34,10 @@ const { selectedCity } = storeToRefs(useForecastStore());
   .daily-cast {
     display: flex;
     flex-direction: column;
+
+    @media only screen and (max-width: 779px) {
+      width: 100%;
+    }
   }
 }
 </style>
